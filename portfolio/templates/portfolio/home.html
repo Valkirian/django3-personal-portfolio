@@ -1,0 +1,87 @@
+{% extends 'portfolio/base.html' %}
+
+
+{% block title %}
+Rachid's Portfolio
+{% endblock %}
+
+{% block content %}
+<section class="page-section" id="services">
+            <div class="container">
+                <h2 class="text-center mt-0">At Your Service</h2>
+                <hr class="divider my-4" />
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-gem text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Pentesting</h3>
+                            <p class="text-muted mb-0">Penetration testing to physical infrastructure and cloud.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Development</h3>
+                            <p class="text-muted mb-0">FullStack websites with Django and boostrap!</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-globe text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Networking</h3>
+                            <p class="text-muted mb-0">Cisco equipment configuration!</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-heart text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Cloud Architect</h3>
+                            <p class="text-muted mb-0">creation of cloud solutions and security in these!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+{% for project in projects %}
+<div id="portfolio">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="{{ project.image.url }}">
+                    <img class="img-fluid" src="{{ project.image.url }}" width="400" height="250" alt="" />
+                    <div class="portfolio-box-caption">
+                        <div class="project-category text-white-50">{{ project.title }}</div>
+                        <div class="project-name">{{ project.description }}</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+{% endfor %}
+<br>
+<br>
+<section class="page-section" id="contact">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="mt-0">Let's Get In Touch!</h2>
+                        <hr class="divider my-4" />
+                        <p class="text-muted mb-5">Ready to start your next project with me? Give me a call or send us an email and we will get back to you as soon as possible!</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+                        <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+                        <div>+57 (314) 435-1189</div>
+                    </div>
+                    <div class="col-lg-4 mr-auto text-center">
+                        <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+                        <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
+                        <a class="d-block" href="mailto:rachidmoyse1@hotmail.com">rachidmoyse1@hotmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "portfolio/base.html" %}
+
+{% block title %}
+Rachid's Blogs
+{% endblock %}
+
+{% block content %}
+<center><h2>{{ blogs.count }} blog{{ blogs.count|pluralize }}</h2><center>
+<br>
+{% for blog in blogs %}
+    {% if blog.image %}
+        <center><img src="{{ blog.image.url }}" width="400" height="250" class="rounded mx-auto d-block"/></center>
+    {% endif %}
+    <a href="{% url 'blog:blog' blog.id %}"><h3>{{ blog.title }}</h3></a>
+    <center><p>{{ blog.date|date:'M d Y'}}</p></center>
+    <p>{{ blog.description|striptags|truncatechars:100 }}</p>
+{% endfor %}
+{% endblock %}
